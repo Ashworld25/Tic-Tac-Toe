@@ -1,0 +1,95 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0; /* Remove default margin */
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh; /* Takes up the full viewport height */
+}
+/* Individual square styling */
+
+.square {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  font-size: 2em;
+  font-weight: bold;
+  height: 60px;
+  width: 60px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex; /* Use Flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Add this to prevent any potential shifting */
+}
+
+.square:hover {
+  background-color: #ddd;
+}
+
+.square:focus {
+  outline: none; /* This is the key fix for removing the movement */
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+/* Winner animation */
+.winner-square {
+  background-color: #aaff80; /* Verde claro */
+  color: white;
+  animation: winner-rotate 1s ease-in-out infinite alternate;
+}
+
+@keyframes winner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Restart button styling */
+.restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+  background-color: #0056b3;
+}
+
+.board-row {
+  display: flex;
+}
+/* Game container */
+.game {
+  background-color: #fff;
+  padding: 40px; /* Aumentamos el padding para más espacio */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Status message */
+.status {
+  font-family: 'Georgia', serif; /* Cambiamos la fuente para que se vea más elegante */
+  font-size: 2.2em;
+  margin-bottom: 25px; /* Más espacio debajo del encabezado */
+  font-weight: bold;
+  color: #2c3e50; /* Un color de texto más oscuro y suave */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Agregamos una pequeña sombra al texto */
+  letter-spacing: 2px; /* Espaciado entre letras */
+}
